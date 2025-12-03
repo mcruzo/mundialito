@@ -1,0 +1,40 @@
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin-top: 10px;
+}
+.countdown-item {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px;
+  text-align: center;
+}
+.count-val {
+  color: #32e676;
+  font-size: 20px;
+  font-weight: 800;
+}
+.count-label {
+  margin-top: 4px;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 14px;
+}
+@media (max-width: 740px) {
+  .count-val {
+    font-size: 18px;
+  }
+  .count-label{
+    font-size: 12px;
+  }
+}
+@media (max-width: 350px) {
+  .count-val {
+    font-size: 16px;
+  }
+  .count-label {
+    font-size: 10px;
+  }
+}

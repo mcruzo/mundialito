@@ -7,7 +7,7 @@ export function Footer() {
   const t = i18n[lang];
   return (
     <footer className="footer">
-      <a href="#">{t.privacy}</a> • <span>{t.createdBy}</span>
+      Copyright © Futbol Mundial 2026
     </footer>
   );
 }

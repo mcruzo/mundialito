@@ -1,10 +1,11 @@
 .mini-card {
-  display: flex;
   align-items: center;
-  gap: 8px;
-  background: #0e1e2e;
-  border: 1px solid #264a64;
+  background: var(--card);
   border-radius: 999px;
+  border: 1px solid var(--border);
+  display: flex;
+  gap: 8px;
+  justify-content: center;
   padding: 6px 10px;
 }
 .mini-flag {
@@ -12,7 +13,7 @@
 }
 .mini-code {
   font-weight: 700;
-  color: #cfe8ff;
+  color: var(--muted);
 }
 
 @media (max-width: 740px) {

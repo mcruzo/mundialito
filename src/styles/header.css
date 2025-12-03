@@ -8,10 +8,8 @@
 .header .nav a {
   color: var(--text);
 }
-[data-theme='dark'] .header {
-  background: #0a0f1f;
-}
 [data-theme='dark'] .brand a {
+  text-decoration: none;
   color: #ffffff;
 }
 [data-theme='dark'] .nav a {
@@ -31,11 +29,30 @@
   font-weight: 700;
   font-size: 20px;
 }
+.brand-logo {
+  display: inline-block;
+  height: 28px;
+}
+.brand-title-lg {
+  display: none;
+}
+.brand-title-sm {
+  display: inline;
+}
+@media (min-width: 640px) {
+  .brand-title-lg {
+    display: inline;
+  }
+  .brand-title-sm {
+    display: none;
+  }
+}
 .nav {
   display: none;
-  gap: 12px;
+  gap: 8px;
 }
 .nav a {
+  text-decoration: none;
   padding: 8px 10px;
   border-radius: 8px;
 }
@@ -56,7 +73,7 @@
   background: var(--bg-soft);
   color: var(--text);
   border: 1px solid var(--border);
-  padding: 8px 12px;
+  padding: 8px;
   border-radius: 10px;
   cursor: pointer;
 }

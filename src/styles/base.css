@@ -56,7 +56,13 @@ body {
 /* >=740px: aparecer layout de dos columnas */
 @media (min-width: 740px) {
   .grid-page {
-    grid-template-columns: 1fr 300px;
+    grid-template-columns: 500px 1fr;
+  }
+}
+/* >=740px: aparecer layout de dos columnas */
+@media (min-width: 880px) {
+  .grid-page {
+    grid-template-columns: 600px 1fr;
   }
 }
 /* >=1200px: ampliar columna lateral y contenedor */
@@ -65,7 +71,7 @@ body {
     max-width: 1200px;
   }
   .grid-page {
-    grid-template-columns: 1fr 360px;
+    grid-template-columns: 840px 1fr;
   }
 }
 .section-title {
@@ -107,5 +113,11 @@ body {
 @media (max-width: 350px) {
   .section-title {
     font-size: 14px;
+  }
+}
+/* Ocultar en móviles (<=480px) */
+@media (min-width: 740px) {
+  .mobile-predictions {
+    display: none;
   }
 }

@@ -1,8 +1,16 @@
 import { useEffect, useState } from 'react';
 import { useStore } from '../store/appStore';
 import { i18n } from '../helpers/i18n';
-import { startDate, drawDate, fmtDuration, daysLeft } from '../helpers/dates';
+import {
+  startDate,
+  drawDate,
+  daysLeft,
+  hoursLeft,
+  minutesLeft,
+  secondsLeft,
+} from '../helpers/dates';
 import { Card } from './Card';
+import { Countdown } from './Countdown';
 import '../styles/hero.css';
 
 export function Hero() {
@@ -38,13 +46,39 @@ export function Hero() {
           <div className="countdown-main" style={{ color: '#32e676' }}>
             {daysLeft(startDate, now)} {t.days}
           </div>
-          <div className="countdown-sub">{fmtDuration(startDate.getTime() - now)}</div>
+          {(() => {
+            const d = daysLeft(startDate, now);
+            const th = hoursLeft(startDate, now);
+            const tm = minutesLeft(startDate, now);
+            const ts = secondsLeft(startDate, now);
+            return (
+              <Countdown
+                d={d}
+                h={Math.max(0, th - d * 24)}
+                m={Math.max(0, tm - th * 60)}
+                s={Math.max(0, ts - tm * 60)}
+              />
+            );
+          })()}
         </Card>
         <Card title={t.groupDrawTitle} rightLabel={fmtDate(drawDate)}>
           <div className="countdown-main" style={{ color: '#32e676' }}>
             {daysLeft(drawDate, now)} {t.days}
           </div>
-          <div className="countdown-sub">{fmtDuration(drawDate.getTime() - now)}</div>
+          {(() => {
+            const d = daysLeft(drawDate, now);
+            const th = hoursLeft(drawDate, now);
+            const tm = minutesLeft(drawDate, now);
+            const ts = secondsLeft(drawDate, now);
+            return (
+              <Countdown
+                d={d}
+                h={Math.max(0, th - d * 24)}
+                m={Math.max(0, tm - th * 60)}
+                s={Math.max(0, ts - tm * 60)}
+              />
+            );
+          })()}
         </Card>
       </div>
     </section>

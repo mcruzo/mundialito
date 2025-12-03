@@ -27,8 +27,11 @@ export function Header() {
     <header className="header">
       <div className="header-inner container">
         <div className="brand">
-          <span className="accent-badge">CAN • MEX • USA 2026</span>
-          <a href="#top">{t.site}</a>
+          <img src="/Logo-mundialito.png" alt="Futbol Mundial 2026" className="brand-logo" />
+          <a href="#countdown" className="brand-title">
+            <span className="brand-title-lg">Futbol Mundial 2026</span>
+            <span className="brand-title-sm">Mundial &#39;26</span>
+          </a>
         </div>
         <nav className="nav">
           <a href="#countdown">{t.start}</a>

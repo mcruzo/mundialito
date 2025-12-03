@@ -4,8 +4,7 @@ import { Card } from './Card';
 import { FlagIcon } from './FlagIcon';
 import { useStore } from '../store/appStore';
 import { i18n } from '../helpers/i18n';
-import '../styles.css';
-
+import '../styles/qualifier.css';
 
 export function Qualifier() {
   const lang = useStore((s) => s.lang);

@@ -27,7 +27,7 @@
   gap: 12px;
   margin-top: 12px;
 }
-@media (min-width: 480px) {
+@media (min-width: 1200px) {
   .countdown-cards {
     grid-template-columns: 1fr 1fr;
   }
