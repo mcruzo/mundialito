@@ -1,0 +1,41 @@
+.mini-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0e1e2e;
+  border: 1px solid #264a64;
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+.mini-flag {
+  font-size: 18px;
+}
+.mini-code {
+  font-weight: 700;
+  color: #cfe8ff;
+}
+
+@media (max-width: 740px) {
+  .mini-flag {
+    font-size: 16px;
+  }
+  .mini-card {
+    padding: 6px 8px;
+  }
+}
+@media (max-width: 480px) {
+  .mini-flag {
+    font-size: 15px;
+  }
+  .mini-code {
+    font-size: 12px;
+  }
+}
+@media (max-width: 350px) {
+  .mini-flag {
+    font-size: 14px;
+  }
+  .mini-code {
+    font-size: 11px;
+  }
+}

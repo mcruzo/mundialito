@@ -1,0 +1,10 @@
+.analysis-label {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #15c27b;
+  color: #06351f;
+  font-weight: 700;
+  font-size: 12px;
+}

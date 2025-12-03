@@ -1,0 +1,29 @@
+.card-ui {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 12px;
+}
+.card-ui-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.card-ui-title {
+  color: var(--text);
+  font-weight: 700;
+}
+.card-ui-right {
+  color: var(--muted);
+  font-size: 12px;
+}
+.card-ui-body {
+  color: var(--text);
+}
+
+@media (min-width: 768px) {
+  .card-ui {
+    padding: 14px;
+  }
+}

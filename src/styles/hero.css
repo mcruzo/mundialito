@@ -1,0 +1,101 @@
+.hero {
+  padding: 24px 16px;
+  text-align: center;
+}
+.title {
+  font-size: 28px;
+  font-weight: 800;
+}
+.subtitle {
+  font-size: 14px;
+  color: var(--muted);
+}
+.countdown-main {
+  margin-top: 20px;
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.countdown-sub {
+  margin-top: 8px;
+  font-size: 18px;
+  color: var(--muted);
+}
+.countdown-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+@media (min-width: 480px) {
+  .countdown-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.banner {
+  margin-top: 10px;
+  display: inline-block;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Tipografías responsive */
+@media (max-width: 1200px) {
+  .title {
+    font-size: 26px;
+  }
+  .subtitle {
+    font-size: 13px;
+  }
+  .countdown-main {
+    font-size: 40px;
+  }
+  .countdown-sub {
+    font-size: 16px;
+  }
+}
+@media (max-width: 740px) {
+  .title {
+    font-size: 24px;
+  }
+  .subtitle {
+    font-size: 13px;
+  }
+  .countdown-main {
+    font-size: 36px;
+  }
+  .countdown-sub {
+    font-size: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .title {
+    font-size: 22px;
+  }
+  .subtitle {
+    font-size: 12px;
+  }
+  .countdown-main {
+    font-size: 32px;
+  }
+  .countdown-sub {
+    font-size: 14px;
+  }
+}
+@media (max-width: 350px) {
+  .title {
+    font-size: 20px;
+  }
+  .subtitle {
+    font-size: 12px;
+  }
+  .countdown-main {
+    font-size: 28px;
+  }
+  .countdown-sub {
+    font-size: 13px;
+  }
+}

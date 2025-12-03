@@ -1,0 +1,34 @@
+# Node/Vite/React
+node_modules/
+dist/
+build/
+.eslintcache
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Env files (sensitive)
+.env
+.env.*
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Caches
+node_modules/.cache/
+.vite/
+.cache/
+
+# Trae workspace
+.trae/
+
+# Coverage
+coverage/
