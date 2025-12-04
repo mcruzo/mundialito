@@ -116,7 +116,7 @@ export function Qualifier() {
                   <div className="q-match">
                     <span className="q-name">🏆 {t.winnerSF}</span>
                     <span className="q-vs">{t.vs}</span>
-                    <span className="q-name">{t.winnerSF}</span>
+                    <span className="q-name">🏆 {t.winnerSF}</span>
                   </div>
                 </div>
               </div>

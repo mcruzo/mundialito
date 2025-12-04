@@ -52,16 +52,17 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
+  margin: 0 auto;
 }
 /* >=740px: aparecer layout de dos columnas */
 @media (min-width: 740px) {
-  .grid-page {
+  .grid-page.sidebar {
     grid-template-columns: 500px 1fr;
   }
 }
 /* >=740px: aparecer layout de dos columnas */
 @media (min-width: 880px) {
-  .grid-page {
+  .grid-page.sidebar {
     grid-template-columns: 600px 1fr;
   }
 }
@@ -70,7 +71,7 @@ body {
   .container {
     max-width: 1200px;
   }
-  .grid-page {
+  .grid-page.sidebar {
     grid-template-columns: 840px 1fr;
   }
 }
@@ -108,6 +109,9 @@ body {
 @media (max-width: 480px) {
   .section-title {
     font-size: 15px;
+  }
+  .container {
+    padding: 8px;
   }
 }
 @media (max-width: 350px) {

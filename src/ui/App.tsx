@@ -9,6 +9,7 @@ import { Qualifier } from './Qualifier';
 import { Bracket } from './Bracket';
 import { Sidebar } from './Sidebar';
 import { Footer } from './Footer';
+import { InstallPrompt } from './InstallPrompt';
 
 export default function App() {
   const theme = useStore((s) => s.theme);
@@ -24,22 +25,25 @@ export default function App() {
     initData();
   }, [initData]);
   return (
-    <div className="grid-page container" id="top">
-      <div>
-        <Header />
-        <Hero />
-        <Qualified />
-        <Qualifier />
-        {showUpcoming ? (
-          <section className="container mobile-predictions">
-            <Predictions />
-          </section>
-        ) : null}
-        {showGroups ? <Groups /> : null}
-        {showBracket ? <Bracket /> : null}
-        <Footer />
+    <>
+      <Header />
+      <InstallPrompt />
+      <div className={`grid-page ${showUpcoming ? 'sidebar' : ''}`} id="top">
+        <div>
+          <Hero />
+          <Qualified />
+          <Qualifier />
+          {showUpcoming ? (
+            <section className="container mobile-predictions">
+              <Predictions />
+            </section>
+          ) : null}
+          {showGroups ? <Groups /> : null}
+          {showBracket ? <Bracket /> : null}
+          <Footer />
+        </div>
+        {showUpcoming ? <Sidebar /> : null}
       </div>
-      {showUpcoming ? <Sidebar /> : null}
-    </div>
+    </>
   );
 }

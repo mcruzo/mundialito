@@ -11,10 +11,6 @@ export function Countdown({ d, h, m, s }: Props) {
   const pad = (v: number) => String(v).padStart(2, '0');
   return (
     <div className="countdown-grid">
-      {/* <div className="countdown-item">
-        <div className="count-val">{d}</div>
-        <div className="count-label">{t.days.toUpperCase()}</div>
-      </div> */}
       <div className="countdown-item">
         <div className="count-val">{pad(h)}</div>
         <div className="count-label">{t.hours.toUpperCase()}</div>
