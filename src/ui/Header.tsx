@@ -17,6 +17,11 @@ export function Header() {
     ['ko', '한국어'],
     ['uz', 'O‘zbek'],
   ];
+  const env = (import.meta as any).env || {};
+  const showUpcoming = String(env.VITE_SHOW_UPCOMING ?? 'false') === 'true';
+  const showGroups = String(env.VITE_SHOW_GROUPS ?? 'false') === 'true';
+  const showBracket = String(env.VITE_SHOW_BRACKET ?? 'false') === 'true';
+
   useEffect(() => {
     if (showLangTip && typeof setShowLangTip === 'function') {
       const id = setTimeout(() => setShowLangTip(false), 5000);
@@ -34,10 +39,9 @@ export function Header() {
           </a>
         </div>
         <nav className="nav">
-          <a href="#countdown">{t.start}</a>
-          <a href="#groups">{t.groups}</a>
-          <a href="#bracket">{t.bracket}</a>
-          <a href="#predictions">{t.predictions}</a>
+          {showGroups ? <a href="#groups">{t.groups}</a> : null}
+          {showBracket ? <a href="#bracket">{t.bracket}</a> : null}
+          {showUpcoming ? <a href="#predictions">{t.predictions}</a> : null}
         </nav>
         <div className="controls">
           <div
