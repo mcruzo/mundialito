@@ -3,19 +3,9 @@
   grid-template-columns: 1fr;
   gap: 12px;
 }
-@media (min-width: 480px) {
+@media (min-width: 850px) {
   .groups {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (min-width: 740px) {
-  .groups {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (min-width: 1200px) {
-  .groups {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
 .card {
@@ -23,6 +13,9 @@
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 12px;
+}
+.table-wrap {
+  width: 100%;
 }
 .card-header {
   display: flex;
@@ -43,6 +36,51 @@
 .table th {
   font-size: 12px;
   color: var(--muted);
+}
+.stats-head {
+  width: 120px;
+}
+.stats-cell {
+  width: 120px;
+}
+.stats-scroll {
+  width: 120px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -ms-overflow-style: none; /* IE 10+ */
+  scrollbar-width: none; /* Firefox: hide */
+}
+.stats-scroll::-webkit-scrollbar {
+  height: 0; /* WebKit: hide */
+  display: none;
+}
+.table thead .stats-scroll {
+  scrollbar-width: none;
+}
+.table tbody tr:last-child .stats-scroll {
+  scrollbar-width: thin; /* show only on last row */
+}
+.table tbody tr:last-child .stats-scroll::-webkit-scrollbar {
+  height: 6px;
+  display: block;
+}
+.table tbody tr:last-child .stats-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.table tbody tr:last-child .stats-scroll::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+.stats-row {
+  display: flex;
+  min-width: 280px; /* 7 * 40px */
+  gap: 0;
+}
+.metric,
+.metric-label {
+  display: inline-block;
+  width: 40px;
+  text-align: center;
 }
 .team {
   display: flex;

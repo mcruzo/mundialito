@@ -1,7 +1,6 @@
 .predictions {
   display: flex;
   flex-direction: column;
-  overflow-x: auto;
   gap: 8px;
   padding-bottom: 8px;
 }

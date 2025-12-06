@@ -5,7 +5,7 @@ import '../styles/countdown.css';
 
 type Props = { d: number; h: number; m: number; s: number };
 
-export function Countdown({ d, h, m, s }: Props) {
+export function Countdown({ d: _d, h, m, s }: Props) {
   const lang = useStore((s) => s.lang);
   const t = i18n[lang];
   const pad = (v: number) => String(v).padStart(2, '0');

@@ -1,14 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useStore } from '../store/appStore';
 import { i18n } from '../helpers/i18n';
-import {
-  startDate,
-  drawDate,
-  daysLeft,
-  hoursLeft,
-  minutesLeft,
-  secondsLeft,
-} from '../helpers/dates';
+import type { Lang } from '../helpers/i18n';
+import { startDate, daysLeft, hoursLeft, minutesLeft, secondsLeft } from '../helpers/dates';
 import { Card } from './Card';
 import { Countdown } from './Countdown';
 import '../styles/hero.css';
@@ -17,7 +11,7 @@ export function Hero() {
   const lang = useStore((s) => s.lang);
   const t = i18n[lang];
   const [now, setNow] = useState(Date.now());
-  const localeMap: Record<string, string> = {
+  const localeMap: Record<Lang, string> = {
     es: 'es-ES',
     en: 'en-US',
     fr: 'fr-FR',
@@ -51,25 +45,6 @@ export function Hero() {
             const th = hoursLeft(startDate, now);
             const tm = minutesLeft(startDate, now);
             const ts = secondsLeft(startDate, now);
-            return (
-              <Countdown
-                d={d}
-                h={Math.max(0, th - d * 24)}
-                m={Math.max(0, tm - th * 60)}
-                s={Math.max(0, ts - tm * 60)}
-              />
-            );
-          })()}
-        </Card>
-        <Card title={t.groupDrawTitle} rightLabel={fmtDate(drawDate)}>
-          <div className="countdown-main" style={{ color: '#32e676' }}>
-            {daysLeft(drawDate, now)} {t.days}
-          </div>
-          {(() => {
-            const d = daysLeft(drawDate, now);
-            const th = hoursLeft(drawDate, now);
-            const tm = minutesLeft(drawDate, now);
-            const ts = secondsLeft(drawDate, now);
             return (
               <Countdown
                 d={d}

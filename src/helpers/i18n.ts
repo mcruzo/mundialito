@@ -1,4 +1,58 @@
-export const i18n = {
+export type Lang = 'es' | 'en' | 'fr' | 'pt' | 'ar' | 'fa' | 'ja' | 'ko' | 'uz';
+export interface Translation {
+  site: string;
+  tournament: string;
+  start: string;
+  calendar: string;
+  groups: string;
+  bracket: string;
+  predictions: string;
+  startsIn: string;
+  drawOn: string;
+  changeLang: string;
+  theme: string;
+  light: string;
+  dark: string;
+  upcoming: string;
+  privacy: string;
+  createdBy: string;
+  qualified: string;
+  potLabel: string;
+  potsLegend: string;
+  qualifierLegend: string;
+  qualifierTitle: string;
+  fifaQualifierSubtitle: string;
+  euroPlayoffsSubtitle: string;
+  route: string;
+  semifinal: string;
+  final: string;
+  winnerSF: string;
+  vs: string;
+  groupLabel: string;
+  groupsMeta: string;
+  team: string;
+  points: string;
+  goalsFor: string;
+  goalsAgainst: string;
+  goalDiff: string;
+  worldStart: string;
+  groupDrawTitle: string;
+  days: string;
+  hours: string;
+  minutes: string;
+  seconds: string;
+  analysisLabel: string;
+  installPromptTitle: string;
+  installPromptBody: string;
+  installYes: string;
+  installNo: string;
+  round16: string;
+  round8: string;
+  quarter: string;
+  semifinalRound: string;
+  finalRound: string;
+}
+export const i18n: Record<Lang, Translation> = {
   es: {
     site: 'FutbolMundial2026',
     tournament: 'Copa Mundial de la FIFA 2026',

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStore } from '../store/appStore';
 import { i18n } from '../helpers/i18n';
+import type { Lang } from '../helpers/i18n';
 import { Card } from './Card';
 import { FlagIcon } from './FlagIcon';
 import '../styles/predictions.css';
@@ -9,7 +10,7 @@ export function Predictions() {
   const lang = useStore((s) => s.lang);
   const t = i18n[lang];
   const items = useStore((s) => s.matches);
-  const localeMap: Record<string, string> = {
+  const localeMap: Record<Lang, string> = {
     es: 'es-ES',
     en: 'en-US',
     fr: 'fr-FR',

@@ -1,9 +1,23 @@
 .bracket {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 1fr;
   gap: 12px;
-  overflow-x: auto;
   padding-bottom: 16px;
+}
+@media (min-width: 740px) {
+  .bracket {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 880px) {
+  .bracket {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .bracket {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 .round {
   display: grid;

@@ -1,0 +1,28 @@
+.loaderbar {
+  display: inline-block;
+}
+.loaderbar-track {
+  position: relative;
+  width: 100%;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.loaderbar-fill {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%);
+  animation: loaderbar-move 1.2s linear infinite;
+}
+@keyframes loaderbar-move {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

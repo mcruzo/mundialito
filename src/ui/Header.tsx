@@ -1,12 +1,13 @@
 import { useStore } from '../store/appStore';
 import { useEffect } from 'react';
 import { i18n } from '../helpers/i18n';
+import type { Lang } from '../helpers/i18n';
 import '../styles/header.css';
 
 export function Header() {
-  const { lang, setLang, theme, toggleTheme, showLangTip, setShowLangTip } = useStore() as any;
+  const { lang, setLang, theme, toggleTheme, showLangTip, setShowLangTip } = useStore();
   const t = i18n[lang];
-  const langs: Array<[string, string]> = [
+  const langs: Array<[Lang, string]> = [
     ['es', 'ES'],
     ['en', 'EN'],
     ['fr', 'FR'],
@@ -49,7 +50,7 @@ export function Header() {
             data-tip={t.changeLang}
             {...(showLangTip ? { 'data-show': '' } : {})}
           >
-            <select className="btn" value={lang} onChange={(e) => setLang(e.target.value as any)}>
+            <select className="btn" value={lang} onChange={(e) => setLang(e.target.value as Lang)}>
               {langs.map(([code, label]) => (
                 <option key={code} value={code}>
                   {label}
