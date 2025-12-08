@@ -1,4 +1,4 @@
-export const startDate = new Date('2026-06-11T15:00:00');
+export const startDate = new Date('2026-06-11T13:00:00');
 export const drawDate = new Date('2025-12-05T11:00:00');
 export const qualifierStartDate = new Date('2026-03-23T00:00:00');
 

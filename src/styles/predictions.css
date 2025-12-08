@@ -4,11 +4,19 @@
   gap: 8px;
   padding-bottom: 8px;
 }
+.predictions-scroll {
+  max-height: 480px; /* ~4 tarjetas visibles */
+  overflow-y: auto;
+}
 .pred-card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 10px;
+}
+.pred-card.past {
+  filter: grayscale(1);
+  opacity: 0.65;
 }
 .pred-header {
   display: flex;

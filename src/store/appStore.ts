@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import type { Lang } from '../helpers/i18n';
+import { allMatches } from '../data/matches';
 
 export interface Team {
   name: string;
@@ -17,10 +18,11 @@ export interface Group {
 }
 export interface Match {
   id?: string | number;
-  date?: string;
+  date?: string; // ISO string con fecha y hora
   home: string;
   away: string;
   score?: { home: number; away: number };
+  venue?: string;
 }
 export interface Bracket {
   R16: Match[];
@@ -185,13 +187,6 @@ export const useStore = create<AppState>((set) => ({
     F: Array.from({ length: 1 }).map(() => ({ home: '—', away: '—' })),
   },
   initData: () => {
-    // Fallback inicial de próximos partidos
-    set({
-      matches: [
-        { date: '2026-06-11', home: 'México', away: 'TBD' },
-        { date: '2026-06-12', home: 'Canadá', away: 'TBD' },
-        { date: '2026-06-12', home: 'Estados Unidos', away: 'TBD' },
-      ],
-    });
+    set({ matches: allMatches });
   },
 }));

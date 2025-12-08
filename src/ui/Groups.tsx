@@ -8,22 +8,13 @@ import { code3 } from '../helpers/codes';
 import { LoaderBar } from './LoaderBar';
 import '../styles/groups.css';
 
-const sortTeams = (teams: Team[]) => {
-  return [...teams].sort((a, b) => {
-    if (b.pts !== a.pts) return b.pts - a.pts;
-    const gdA = a.gf - a.ga;
-    const gdB = b.gf - b.ga;
-    if (gdB !== gdA) return gdB - gdA;
-    if (b.gf !== a.gf) return b.gf - a.gf;
-    return a.name.localeCompare(b.name);
-  });
-};
+const keepOrder = (teams: Team[]) => teams;
 
 export function Groups() {
   const lang = useStore((s) => s.lang);
   const t = i18n[lang];
   const groups = useStore((s) => s.groups);
-  const cards = groups.map((g) => ({ ...g, teams: sortTeams(g.teams) }));
+  const cards = groups.map((g) => ({ ...g, teams: keepOrder(g.teams) }));
   return (
     <section id="groups" className="container">
       <div className="section-title">
