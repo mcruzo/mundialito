@@ -8,6 +8,7 @@ import { Qualifier } from './Qualifier';
 import { Bracket } from './Bracket';
 import { Footer } from './Footer';
 import { InstallPrompt } from './InstallPrompt';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App() {
   const theme = useStore((s) => s.theme);
@@ -37,6 +38,7 @@ export default function App() {
           <Footer />
         </div>
       </div>
+      <Analytics />
     </>
   );
 }
